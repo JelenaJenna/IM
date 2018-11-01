@@ -6,6 +6,13 @@ public class Point {
 	private int y;
 	private boolean selected;
 	
+	public double distance(int x2, int y2) {
+		double dx = this.x - x2;
+		double dy = this.y - y2;
+		double d = Math.sqrt(dx * dx + dy * dy);
+		return d;
+	}
+	
 	public int getX() {
 		return this.x;
 	}
@@ -22,7 +29,7 @@ public class Point {
 		this.y = y;
 	}
 	
-	public boolean getSelected() {
+	public boolean isSelected() {
 		return this.selected;
 	}
 	
