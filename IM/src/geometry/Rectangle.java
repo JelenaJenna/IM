@@ -7,8 +7,8 @@ public class Rectangle {
 	private int width;
 	private boolean selected;
 	
-public Rectangle() {
-		
+	public Rectangle() {
+
 	}
 	
 	public Rectangle(Point upperLeftPoint, int height, int width) {

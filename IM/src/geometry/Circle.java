@@ -6,9 +6,9 @@ public class Circle {
 	private int radius;
 	private boolean selected;
 	
-public Circle() {
-		
-	} 
+	public Circle() {
+
+	}
 	
 	public Circle(Point center, int radius) {
 		this.center = center;
