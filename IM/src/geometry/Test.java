@@ -129,6 +129,31 @@ public class Test {
 				System.out.println(r2.area());
 			}
 		}
+		
+		Circle c5 = new Circle(p1, 10);
+		
+		System.out.println(c1.equals(c5));
+		System.out.println(c1 == c5);
+		c1 = c5;
+		System.out.println(c1 == c5);
+		
+		Donut d = new Donut(new Point(20, 20), 10, 7);
+		System.out.println(d.toString());
+		System.out.println(d);
+		
+		Donut d1 = new Donut(p, 7, 5);
+		System.out.println(d.equals(d1));
+		System.out.println(d == d1);
+		
+		d = d1;
+		System.out.println(d.equals(d1));
+		System.out.println(d == d1);
+
+		System.out.println(d instanceof Donut);
+		System.out.println(d instanceof Object);
+		System.out.println(d instanceof Circle);
+		
+		System.out.println(c1 instanceof Donut);
 	}
 
 }
