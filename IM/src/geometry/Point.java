@@ -1,10 +1,11 @@
 package geometry;
 
-public class Point {
+import java.awt.Graphics;
+
+public class Point extends Shape {
 
 	private int x;
 	private int y;
-	private boolean selected;
 	
 	public Point() {
 		
@@ -17,7 +18,14 @@ public class Point {
 	
 	public Point(int x, int y, boolean selected) {
 		this(x, y);
-		this.selected = selected;
+		setSelected(selected);
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		g.drawLine(this.x-2, this.y, this.x+2, this.y);
+		g.drawLine(this.x, this.y-2, this.x, this.y+2);
+		
 	}
 	
 	public boolean contains(int x, int y) {
@@ -61,16 +69,8 @@ public class Point {
 		this.y = y;
 	}
 	
-	public boolean isSelected() {
-		return this.selected;
-	}
-	
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}
-	
+
 }
