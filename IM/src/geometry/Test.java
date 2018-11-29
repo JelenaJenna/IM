@@ -1,10 +1,12 @@
 package geometry;
 
+import java.util.Arrays;
+
 public class Test {
 
 	public static void main(String[] args) {
 
-		Point p = new Point();
+		/*Point p = new Point();
 		
 		p.setX(10);
 		p.setY(20);
@@ -154,6 +156,33 @@ public class Test {
 		System.out.println(d instanceof Circle);
 		
 		System.out.println(c1 instanceof Donut);
+		
+		d.moveBy(50, 50);
+		System.out.println(d.toString());*/
+		
+		Line l1 = new Line(new Point(2, 2), new Point(11, 11));
+		Line l2 = new Line(new Point(1, 1), new Point(10, 10));
+		
+		System.out.println(l1.compareTo(l2));
+		
+		Point p1 = new Point(5, 5);
+		Point p2 = new Point(10, 10);
+		Point p3 = new Point(15, 15);
+		Point p4 = new Point(2, 2);
+		
+		Point[] arrayOfPoints = {p1, p2, p3, p4};
+		
+		System.out.println("Nesortiran niz tacaka");
+		for (int i = 0; i < arrayOfPoints.length; i++) {
+			System.out.println(arrayOfPoints[i]);
+		}
+		
+		Arrays.sort(arrayOfPoints);
+		
+		System.out.println("Sortiran niz tacaka");
+		for (int i = 0; i < arrayOfPoints.length; i++) {
+			System.out.println(arrayOfPoints[i]);
+		}
 	}
 
 }

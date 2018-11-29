@@ -27,6 +27,20 @@ public class Circle extends Shape {
 				this.getRadius()*2, this.getRadius()*2);
 		
 	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Circle) {
+			return this.radius - ((Circle)o).radius;
+		}
+		return 0;
+	}
+	
+	@Override
+	public void moveBy(int byX, int byY) {
+		center.moveBy(byX, byY);
+		
+	}
 	
 	public boolean contains(int x, int y) {
 		return this.getCenter().distance(x, y) <= radius;
@@ -70,6 +84,8 @@ public class Circle extends Shape {
 	public String toString() {
 		return "Center=" + center + ", radius=" + radius; 
 	}
+
+
 
 	
 }

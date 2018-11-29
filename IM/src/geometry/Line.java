@@ -27,7 +27,22 @@ public class Line extends Shape {
 				this.getEndPoint().getX(), this.getEndPoint().getY());
 		
 	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		startPoint.moveBy(byX, byY);
+		endPoint.moveBy(byX, byY);
+	}
 	
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Line) {
+			return (int) (this.length() - ((Line) o).length() );
+			
+		} 
+		return 0;
+	}
+
 	public boolean contains(int x, int y) {
 		if ((startPoint.distance(x, y) + endPoint.distance(x, y)) - length() <= 0.05) {
 			return true;
@@ -71,5 +86,7 @@ public class Line extends Shape {
 	public String toString() {
 		return startPoint + "-->" + endPoint;
 	}
+
+	
 	
 }

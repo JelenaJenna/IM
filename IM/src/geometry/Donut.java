@@ -26,10 +26,19 @@ public class Donut extends Circle {
 				this.getInnerRadius()*2, this.getInnerRadius()*2);
 	}
 	
+	public int compareTo(Object o) {
+		if (o instanceof Donut) {
+			return (int) (this.area() - ((Donut) o).area());
+		}
+		return 0;
+	}
+	
 	public boolean contains(int x, int y) {
 		double dFromCenter = this.getCenter().distance(x, y);
 		return super.contains(x, y) && dFromCenter > innerRadius;
 	}
+	
+	
 	
 	public boolean contains(Point p) {
 		double dFromCenter = this.getCenter().distance(p.getX(), p.getY());

@@ -30,6 +30,21 @@ public class Rectangle extends Shape {
 		
 	}
 	
+	@Override
+	public int compareTo(Object o) {
+		if (o instanceof Rectangle) {
+			return this.area() - ((Rectangle) o).area();
+			
+		}
+		return 0;
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeftPoint.moveBy(byX, byY);
+		
+	}
+	
 	public boolean contains(int x, int y) {
 		if (this.getUpperLeftPoint().getX() <= x &&
 				this.getUpperLeftPoint().getY() <= y &&
@@ -93,6 +108,9 @@ public class Rectangle extends Shape {
 	public String toString() {
 		return "Upper left point=" + upperLeftPoint + ", height=" + height + ", width=" + width;
 	}
+
+	
+
 
 	
 }
